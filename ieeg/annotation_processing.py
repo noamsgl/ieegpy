@@ -16,8 +16,8 @@
 import math as m
 import datetime
 
-from ieeg.mprov_listener import MProvWriter, AnnotationActivity
-from ieeg.processing import Window
+from .mprov_listener import MProvWriter, AnnotationActivity
+from .processing import Window
 
 
 class SlidingWindowAnnotator:

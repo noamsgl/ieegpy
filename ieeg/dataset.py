@@ -17,8 +17,9 @@ from collections import namedtuple
 import numpy as np
 import pandas as pd
 from deprecation import deprecated
-from ieeg.ieeg_api import IeegConnectionError
+from .ieeg_api import IeegConnectionError
 
+SEC_TO_USEC = 1e6
 
 class TimeSeriesDetails:
     """
@@ -436,6 +437,7 @@ class Dataset:
 
         return unmontaged_data
 
+    
     def get_data(self, start, duration, channels):
         """
         Returns data from the IEEG platform using the current montage if any.
@@ -446,7 +448,8 @@ class Dataset:
                          are interpreted as montage channels.
         :return: 2D array, rows = samples, columns = channels
         """
-
+        start *= SEC_TO_USEC
+        duration *= SEC_TO_USEC
         if not self.current_montage:
             return self._get_unmontaged_data(start, duration, channels)
 

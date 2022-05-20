@@ -15,7 +15,7 @@
 '''
 import xml.etree.ElementTree as ET
 import requests
-from ieeg.ieeg_auth import IeegAuth
+from .ieeg_auth import IeegAuth
 
 
 class IeegApi:

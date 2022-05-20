@@ -17,8 +17,8 @@
 
 import xml.etree.ElementTree as ET
 from deprecation import deprecated
-from ieeg.dataset import Dataset as DS
-from ieeg.ieeg_api import IeegApi
+from .dataset import Dataset as DS
+from .ieeg_api import IeegApi
 
 class Session:
     """
